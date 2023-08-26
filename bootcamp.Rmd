@@ -1,0 +1,943 @@
+---
+title: "bootcamp"
+author: "Matt Pecsok"
+date: "2023-08-21"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+The content in this bootcamp is covered by a huge number of web resources. Following up on your learning is easy and should be done soon and regularly to ensure you get the most value.
+
+https://www.w3schools.com/r/default.asp
+https://r4ds.had.co.nz/
+
+
+
+```{r}
+library(tidyverse)
+```
+
+# Basic Syntax and Variables
+
+```{r}
+print("hello world!")
+```
+
+```{r}
+'Hello World!'
+```
+
+## Errors!
+
+It's the best place to start. Because you'll create lots of them.
+
+The first type of error we'll cover is syntax error. Get used to it.
+Incorrect code will often generate syntax errors.
+
+```{r}
+#1 = 2
+```
+
+In programming, an expression is a combination of values, variables,
+operators, and function calls that can be evaluated to produce a result.
+Expressions are fundamental building blocks used to perform
+calculations, manipulate data, and make decisions within a program. They
+can represent a wide range of operations, from simple arithmetic
+calculations to complex logical evaluations.
+
+An expression is incomplete if it is missing something. In this case "
+
+```{r}
+#"Hello World
+```
+
+## Literals
+
+character string literals
+
+a string can contain, letters, numbers special characters etc.
+
+```{r}
+#"hello world!"
+```
+
+```{r}
+#print("hello world!")
+```
+
+```{r}
+print(paste('hello','world!'))
+```
+
+YOU DO. Create a code block, put a string literal it it and run the code
+block.
+
+## Numeric Literals
+
+```{r}
+4
+```
+
+```{r}
+# YOU TRY pick a number. Any number. 
+```
+
+### Addition
+
+```{r}
+1+1
+```
+
+```{r}
+# YOU TRY. Add two numbers. 
+```
+
+```{r}
+# YOU TRY multiply two numbers
+```
+
+
+```{r}
+1/3
+```
+
+```{r}
+9L
+```
+
+```{r}
+class(9L)
+```
+
+### Logical Literal
+
+```{r}
+if (FALSE) {
+  print("it's true")
+} else {
+  print("it's false")
+}
+```
+
+```{r}
+if ((TRUE) && (TRUE)) {
+  print("it's true")
+} else {
+  print("it's false")
+}
+```
+
+```{r}
+if ((TRUE) || (TRUE)) {
+  print("it's true")
+} else {
+  print("it's false")
+}
+```
+# Vector "literal"
+
+```{r}
+c(TRUE, FALSE, TRUE) | c(FALSE, TRUE, TRUE)
+```
+
+### Comments
+
+```{r}
+# This is a COMMENT
+
+1+1 # this is a comment at the end of the line. 
+
+#This is an error!
+```
+# Operators
+
+Operate on variables and values. Operators perform operations.
+
+
+
+### Arithmetic
++ * - / ^
+
+### Assignment
+
+<- 
+
+### Comparison
+
+==  - Is Equal?
+!=  - Is Equal?
+> - Is Greater than?
+<
+>= - Is greater than or Equal?
+<=
+
+Logical
+&&  - AND
+|| - OR
+! - NOT
+
+```{r}
+
+```
+
+
+
+
+# Variables
+
+Your new best friend.
+
+Variables store literals with a name for use later.
+
+use <- to assign values (= works as well for most situations)
+
+## Character strings
+
+```{r}
+
+my_name <- "Matt"
+
+my_name
+```
+
+we use the class function and pass in my_name. the return value tells us
+what type of variable my_name is. given that we assigned a string
+literal to it, it should be no surprise that it is a character type
+(character).
+
+```{r}
+class(my_name)
+```
+
+```{r}
+# create a string variable and display it
+
+first_name <- "Matthew"
+```
+
+Find the length of the character variable
+
+```{r}
+nchar(first_name)
+```
+
+```{r}
+first_name[1:4] # Doesn't work the same as python
+```
+
+```{r}
+substr(first_name, start = 1, stop = 4)
+```
+
+You try
+
+```{r}
+# create a new variable of your name
+# get the length of your name
+```
+
+```{r}
+# get the first 3 characters of your name
+```
+
+```{r}
+# get the 3rd to last characters of your name
+```
+
+```{r}
+grepl("Matt","Matthew")
+```
+
+## Numeric Variables
+
+```{r}
+# use grepl to see if Cat is in Catherine
+```
+
+```{r}
+my_int <- 42
+my_int
+```
+
+```{r}
+class(my_int)
+```
+
+```{r}
+class(42.5)
+```
+
+You try
+
+```{r}
+# create a numeric variable
+```
+
+```{r}
+# check the class
+```
+
+```{r}
+# add 5 to the variable, show the result. 
+```
+
+Boolean variables in R are known as logical
+
+```{r}
+my_bool <- TRUE
+
+class(my_bool)
+```
+
+```{r}
+5 < 4
+```
+
+```{r}
+4 != 2
+```
+
+```{r}
+five_lt_three <- 5 < 3
+
+five_lt_three
+```
+
+You try create a new variable that has a boolean value based on two
+numbers.
+
+```{r}
+# you put code here
+```
+
+```{r}
+"matt" == "MATT"
+
+```
+
+```{r}
+tolower("matt") == tolower("MATT")
+```
+
+## Vector Variables
+
+```{r}
+odd_nums <- c(1,3,5,7,9)
+
+odd_nums
+```
+
+```{r}
+length(odd_nums)
+```
+
+```{r}
+sum(odd_nums)
+```
+
+You try
+
+```{r}
+ # create a numeric vector
+```
+
+```{r}
+ # find length
+```
+
+```{r}
+# get class
+```
+
+```{r}
+# sum
+```
+
+```{r}
+ # create a logical vector
+```
+
+```{r}
+ # find length
+```
+
+```{r}
+# get class
+```
+
+```{r}
+# sum
+```
+
+```{r}
+#set.seed(10)
+my_numbers <- rnorm(10, mean = 10, sd = 5)
+my_numbers
+```
+
+
+```{r}
+mean(my_numbers)
+```
+
+```{r}
+sd(my_numbers)
+```
+
+
+
+# if
+
+```{r}
+
+if (1==2) {
+  print('it evaluated to true')
+}
+```
+
+
+
+# if/else
+
+```{r}
+if (FALSE) {
+  print("FALSE IS TRUE")
+} else {
+  print("FALSE IS FALSE")
+}
+```
+
+You try
+
+```{r}
+ # create an if else that evaluates if 4 is less than 3. 
+
+#if () {
+#  print('4 is less than 3')
+#} else {
+#  print('4 is NOT less than 3')
+#}
+```
+
+```{r}
+my_name
+```
+```{r}
+grepl("c","abdef")
+```
+
+```{r}
+if (grepl("A", my_name)) {
+  print("True: 'A' is in my_name")
+} else {
+  print("False: 'A' is not in my_name")
+}
+```
+You try. create an if/else statement that tests if the price below is greater than or equal to 60. 
+
+if it is, multiply price by .9 to give a 10% discount. 
+otherwise multiply price bby 1.1 to increase the cost.
+at the end (outside of the if/else) show the new price
+
+```{r}
+# YOU TRY
+
+price <- 60
+
+
+```
+
+
+
+
+
+### else if
+
+```{r}
+# Example variables
+x <- 10
+
+# Check various conditions
+if (x > 15) {
+  print("x is greater than 15")
+} else if (x > 5) {
+  print("x is greater than 5 but not greater than 15")
+} else {
+  print("x is not greater than 5")
+}
+```
+```{r}
+# Example variables
+x <- 100
+
+# Check various conditions
+if (x > 15) {
+  print("x is greater than 15")
+} else if (x > 5) {
+  print("x is greater than 5 but not greater than 15")
+} else {
+  print("x is not greater than 5")
+}
+```
+
+
+
+
+
+## Logical Operators
+
+### AND
+
+```{r}
+# Example variables
+x <- 10
+y <- 8
+
+# Check if both x is greater than 5 and y is greater than 7
+if (x > 5 && y > 7) {
+  print("Both conditions are TRUE")
+} else {
+  print("At least one condition is FALSE")
+}
+```
+
+You try
+
+write an if/else statement to see if the string is greater than 6 characters, and if it contains "c" then print('length gt 16 and contains c') else print('false either not gt 16 or doesn't contain c')
+
+```{r}
+
+some_string_var <- "Hi my name is Matthew and I'm a professor at the U. Nice to meet you!"
+```
+
+This is an opportunity to talk about ' and "
+
+### OR
+
+```{r}
+# Example variables
+x <- 3
+y <- 8
+
+# Check if either x is greater than 5 or y is greater than 7
+if (x > 5 || y > 7) {
+  print("At least one condition is TRUE")
+} else {
+  print("Both conditions are FALSE")
+}
+```
+
+You try. Change this from || to &&
+Also change the text to correctly say what happened in the evaluation
+
+```{r}
+# Example variables
+x <- 3
+y <- 8
+
+# Check if either x is greater than 5 or y is greater than 7
+if (x > 5 || y > 7) {
+  #print("At least one condition is TRUE")
+} else {
+  #print("Both conditions are FALSE")
+}
+```
+
+
+# Precedence
+
+R follows common mathematics conventions
+
+PEMDAS
+
+Parentheses Exponents (Powers and Roots) Multiplication and Division
+(from left to right) Addition and Subtraction (from left to right) if we
+simply evaluated from left to right we might get the 2+3 = 5 and then 5
+\* 4 = 20. This is not how we would expect evaluation to work in math
+terms.
+
+```{r}
+2 - 3 * 4
+```
+
+```{r}
+(2 - 3) * 4
+```
+
+
+
+
+
+# Functions
+
+## simple hardcoded function
+
+```{r}
+
+return_three <- function() {
+  return(3)
+} 
+
+return_three()
+```
+
+## function with a parameter
+
+```{r}
+
+add_three <- function(the_num) {
+  return(the_num + 3)
+} 
+
+add_three(7)
+```
+
+```{r}
+
+# you try. create a function that multiplies a number by 8 run the function to see the result
+```
+
+## function with 2 parameters
+
+```{r}
+
+add_two_numbers <- function(num1,num2) {
+  return(num1 + num2)
+} 
+
+add_two_numbers(7,8)
+```
+
+```{r}
+
+# you try. create a function that multiplies two numbers passed in as arguments. run the function to see the result
+```
+
+## function with parameters and default arguments
+
+```{r}
+
+add_two_numbers_w_default <- function(num1=3,num2=5) {
+  return(num1 + num2)
+} 
+
+add_two_numbers_w_default()
+```
+
+```{r}
+
+# you try. create a function that has argument defaults which multiplies two numbers passed in as arguments. run the function with and without passing arguments to see the result
+```
+
+The following function from stringr removes the letter "a" from the
+character string "Matt"
+
+Embed this into a new function called "remove_a" and call it with:
+Alexander
+
+```{r}
+str_replace_all("Matt","a","")
+```
+
+```{r}
+
+```
+
+# DataFrames
+
+## dataframe from vectors
+
+In R, we don't need a special library (like Pandas) to create
+dataframes.
+
+```{r}
+names <- c('Jose','Selena','Jose','John','Hannah')
+names[2]
+```
+
+```{r}
+ages <- c(23,17,20,25,22)
+ages[2]
+```
+
+```{r}
+person_df = data.frame(names,ages)
+person_df
+```
+
+```{r}
+str(person_df)
+```
+
+```{r}
+summary(person_df)
+```
+
+You try. create 2 vectors, one numeric with 3 prices. one character with
+3 product names, apples, oranges, lemons
+
+Create a dataframe with these 2 vectors. show the dataframe show the
+structure and summary of the dataframes.
+
+```{r}
+# create the 2 vectors here
+```
+
+```{r}
+# create the dataframe here. give it a name. like fruit. show the dataframe
+```
+
+```{r}
+# str()
+```
+
+```{r}
+# summary()
+```
+
+While base R has dataframes. Tidyverse is much better for working with
+dataframes.
+
+## tidyverse
+
+### piping data
+
+pipe sends the data to the first argument of the function.
+
+here's the base R way of calling a function with an argument.
+
+```{r}
+nchar("Matt")
+```
+
+here is the tidyverse way to do the same thing.
+
+%>% is known as piping the data.
+
+```{r}
+"Matt" %>% nchar()
+```
+
+```{r}
+
+c(1,2,3,4) %>% length()
+  
+```
+
+```{r}
+person_df %>% filter(ages > 20)
+```
+
+```{r}
+person_df %>% filter(ages <= 20)
+```
+
+```{r}
+# You try. Filter the dataframe for ages greater than or equal to 18
+```
+
+```{r}
+person_df['ages'] > 20
+```
+
+```{r}
+person_df$gt_20 <- person_df$ages > 20
+
+person_df %>% head()
+```
+
+```{r}
+person_df %>% filter(names %in% c('Jose','Selena'))
+```
+
+```{r}
+ # you try. filter for the name Selena or Hannah
+```
+
+```{r}
+person_df %>% select(names,gt_20) %>% head(2)
+```
+
+## titanic dataframe/tibble
+
+A tibble is a dataframe, plus a lot more. We often say dataframe to keep
+things simple, but when we read data in with tidyverse a tibble is
+different than a base R dataframe.
+
+```{r}
+
+titanic <- read_csv('https://raw.githubusercontent.com/matthewpecsok/4482_fall_2022/main/data/titanic.train.csv')
+
+
+```
+
+```{r}
+person_df %>% class()
+```
+
+```{r}
+titanic %>% class()
+```
+
+```{r}
+titanic %>% summary()
+```
+
+```{r}
+titanic %>% head()
+```
+
+```{r}
+titanic %>% head(n=9)
+```
+
+```{r}
+titanic %>% summary()
+```
+
+```{r}
+titanic %>% tally()
+```
+
+```{r}
+titanic %>% group_by(Sex) %>% tally()
+```
+
+```{r}
+titanic %>% mutate(my_new_column = "Hi!!!!") 
+```
+
+```{r}
+# You try
+
+# Mutate a new columns with the words "Hello World!". The column name can be "howdy"
+
+```
+
+## Aggregation and summarization
+
+```{r}
+titanic %>% 
+  group_by(Survived,Sex) %>% 
+  tally() %>% 
+  group_by(Sex) %>% 
+  mutate(proportion_survived = n/sum(n)) %>%
+  arrange(Sex)
+```
+
+```{r}
+titanic %>%
+  group_by(Sex) %>%
+  summarise(mean_value = mean(Age, na.rm = TRUE),
+            sd_value = sd(Age, na.rm = TRUE))
+```
+
+```{r}
+titanic %>%
+  group_by(Pclass) %>%
+  summarise(mean_value = mean(Fare, na.rm = TRUE),
+            sd_value = sd(Fare, na.rm = TRUE))
+```
+
+```{r}
+titanic$Pclass <- as.character(titanic$Pclass)
+```
+
+```{r}
+titanic_mean_sd <- titanic %>%
+  group_by(Survived) %>%
+  summarise(mean_value = mean(Fare, na.rm = TRUE),
+            sd_value = sd(Fare, na.rm = TRUE))
+
+
+titanic_mean_sd
+```
+
+## GG Plots
+
+```{r}
+ggplot(data = titanic) + geom_bar(aes(x = Sex))
+
+# can be rewritten as
+
+titanic %>%
+  ggplot() +
+  geom_bar(aes(x = Sex))
+```
+
+You try
+
+```{r}
+# create a barplot of Survived
+```
+
+```{r}
+ggplot(data = titanic, aes(x = Pclass, y = Fare)) +
+  geom_boxplot() +
+  labs(x = "Pclass", y = "Fare", title = "Titanic: Pclass vs. Fare")
+
+# alternative syntax
+
+titanic %>% ggplot() +
+  geom_boxplot(aes(x = Pclass, y = Fare)) +
+  labs(x = "Pclass", y = "Fare", title = "Titanic: Pclass vs. Fare")
+```
+
+You try.
+
+```{r}
+# create a boxplot of Pclass and Age
+```
+
+
+
+
+```{r}
+ggplot(data = titanic, aes(x = Age, y = Fare)) +
+  geom_point() +
+  labs(x = "Age", y = "Fare", title = "Titanic: Age vs. Fare")
+```
+
+## Checking for nulls
+
+```{r}
+titanic %>%
+  summarise(across(everything(), ~ sum(is.na(.)))) 
+```
+
+```{r}
+# Count nulls in each column
+null_counts <- colSums(is.na(titanic))
+
+# Print the null counts
+print(null_counts)
+```
+
+# For loops
+
+```{r}
+
+for (i in c(1:10)) {
+  print(paste("we're on iteration",i))
+}
+```
+
+```{r}
+sum <- 0
+
+for (i in c(1:10)) {
+  sum <- sum + i
+}
+
+print(sum)
+```
+Don't write for loops unless you have to Vector notation is often more efficient and concise. 
+
+```{r}
+sum(c(1:10))
+```
+
+You try. This 
+
